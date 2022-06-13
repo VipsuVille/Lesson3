@@ -49,15 +49,15 @@ let persons = [
     },
       ]
 
-      app.get('/', (req, res) => {
+      app.get('/', (req, res,next) => {
         res.send('<h1>Hello World!</h1>')
       })
       
-      app.get('/api/persons', (req, res) => {
+      app.get('/api/persons', (req, res, next) => {
         res.json(persons)
       })
 
-      app.get('/api/info', (req, res) => {
+      app.get('/api/info', (req, res, next) => {
         res.send(`<h2>Phonebook has info for ${persons.length} people</h2>
                   <p>${new Date()}</p>`
                   )
