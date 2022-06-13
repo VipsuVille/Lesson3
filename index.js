@@ -49,15 +49,15 @@ let persons = [
     },
       ]
 
-      app.get('/', (req, res,next) => {
+      app.get('/', (req, res) => {
         res.send('<h1>Hello World!</h1>')
       })
       
-      app.get('/api/persons', (req, res, next) => {
+      app.get('/api/persons', (req, res) => {
         res.json(persons)
       })
 
-      app.get('/api/info', (req, res, next) => {
+      app.get('/api/info', (req, res) => {
         res.send(`<h2>Phonebook has info for ${persons.length} people</h2>
                   <p>${new Date()}</p>`
                   )
@@ -121,7 +121,7 @@ let persons = [
         }})
       
       
-      const PORT = process.envPORT || 3001
+      const PORT = process.env.PORT || 3001
       app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`)
       })
