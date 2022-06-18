@@ -56,6 +56,7 @@ let persons = [
       })
       
       app.get('/api/persons', (req, res) => {
+        console.log("täällä")
         Note.find({}).then(notes => {
         res.json(persons)
         })
