@@ -1,8 +1,8 @@
-POST https://cryptic-thicket-63568.herokuapp.com/api/persons
+POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-   "content": "nakkssdasdsasdse",
+   "content": "nakkssdasasdsaddsasdse",
    "contentNUM": "0303003"
 
 }
