@@ -27,28 +27,6 @@ app.use(
 
 let persons = [
    
-    {
-      "content": "Arto Hellas",
-      "contentNUM": "040-123456",
-      "id": 1
-    },
-    {
-      "content": "Ada Lovelace",
-      "contentNUM": "39-44-5323523",
-      "id": 2
-    },
-    {
-      "content": "Dan Abramov",
-      "contentNUM": "12-43-234345",
-      "id": 3
-    },
-    {
-      "content": "kkk",
-      "contentNUM": "",
-      "date": "2022-05-31T23:55:01.363Z",
-      "important": true,
-      "id": 4
-    },
       ]
 
       app.get('/', (req, res) => {
@@ -108,7 +86,7 @@ let persons = [
             error: 'name missing' 
           })
         }
-        else if (!body.contentNUM) {
+        else if (!body.number) {
           return response.status(400).json({ 
             error: 'number missing' 
           })
@@ -124,6 +102,7 @@ let persons = [
 
             const person = new Note({
             content: body.content,
+            number: body.number,
             important: body.important || false,
             date: new Date(),
           })
