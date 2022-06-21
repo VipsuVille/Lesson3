@@ -23,19 +23,19 @@ const note = new Note({
   number: process.argv[4]
 })
 if (process.argv.length === 3) {
-    console.log("Hip")
-    Note.find({}).then(result => {
-        result.forEach(note => {
-          console.log(note)
-        })
-        mongoose.connection.close()
-        process.exit(1)
-      })
+  console.log('Hip')
+  Note.find({}).then(result => {
+    result.forEach(note => {
+      console.log(note)
+    })
+    mongoose.connection.close()
+    process.exit(1)
+  })
 
 }
 if (process.argv.length === 5) {
-note.save().then(result => {
-  console.log(`added ${note.content} ${note.number} to phonebook`)
-  mongoose.connection.close()
-})
+  note.save().then(() => {
+    console.log(`added ${note.content} ${note.number} to phonebook`)
+    mongoose.connection.close()
+  })
 }
